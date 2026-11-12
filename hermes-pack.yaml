@@ -1,11 +1,11 @@
 name: hermes-folio
 description: Sheets, Data and Whiteboard for Hermes Desktop. Three plugins that hand work to each other.
 author: Adolanium
-version: 1.0.4
+version: 1.0.5
 plugins:
   - repo: Adolanium/hermes-sheets
-    ref: d09151f88487698d85efc8fe8c8b51186fe1a69a
+    ref: 8a6ec2f5ebe88f9150161d6c27b4c64e2b0484dc
   - repo: Adolanium/hermes-data
-    ref: fa02bac438f549a90ac081bdabfc49f905a4b3ad
+    ref: 215de9f7b837d72de451f9c6bfeb5470d3a63546
   - repo: Adolanium/hermes-whiteboard
-    ref: b5c1c3e17ffa1f4b53d02244a8c383b695b40039
+    ref: 21404dddd642bfc57f1f764f0975bfe676a2d8f1
