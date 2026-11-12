@@ -1,5 +1,4 @@
 
-@font-face { font-family: 'Collapse'; font-weight: 700; src: url('assets/Collapse-Bold.woff2') format('woff2'); }
 :root { --ink: hsl(232 26% 17%); --gold: hsl(41 92% 56%); --paper: hsl(40 44% 95.5%); }
 * { box-sizing: border-box; }
 html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: hsl(36 46% 88%); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; cursor: none; }

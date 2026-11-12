@@ -11,6 +11,7 @@
 <meta property="og:url" content="https://adolanium.github.io/hermes-folio/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f3ec">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +31,7 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="top">
-  <a class="brand" href="#" aria-label="Hermes Folio, home">
+  <a class="brand" href="./" aria-label="Hermes Folio, home">
     <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.4" class="m-disc"/><path d="M9 27c2-9 9-16 21-17-2 3-5 5-8 6 3 0 6 0 8-1-2 4-6 6-10 7 3 1 5 1 7 0-3 4-9 7-18 5Z" class="m-wing"/></svg>
     <span>Hermes Folio</span>
   </a>
@@ -39,20 +40,18 @@
     <a href="#data">Data</a>
     <a href="#whiteboard">Whiteboard</a>
     <a href="#together">Together</a>
-    <a href="#film">Film</a>
     <a href="#install" class="pill">Install</a>
     <button type="button" class="theme" data-theme-switch aria-label="Switch between light and dark" hidden><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2Z"/></svg></button>
   </nav>
 </header>
 
 <main id="main">
-  <section class="hero">
-    <p class="eyebrow">Three plugins for Hermes Desktop</p>
-    <h1>Three pages.<br><em>One folio.</em></h1>
-    <p class="lede">A sheet, a report and a board that hand work to each other. Format your rows, chart them in one click, and pin what you find to a board. Hermes suggests at every step, and nothing lands until you accept it.</p>
+  <section class="hero" aria-labelledby="hero-h">
+    <h1 id="hero-h">Three pages. <em>One folio.</em></h1>
+    <p class="lede">Sheets, Data and Whiteboard are three plugins for Hermes Desktop that hand work to each other. Hermes suggests at every step, and nothing lands until you accept it.</p>
     <div class="actions">
-      <a class="btn solid" href="#install">Install the three</a>
-      <a class="btn line" href="#live">Try it here <span aria-hidden="true">↓</span></a>
+      <a class="btn solid" href="#live"><span class="wide-only">Try the live demo</span><span class="narrow-only">Watch the film</span></a>
+      <a class="btn line" href="#install">Install all three</a>
     </div>
   </section>
 
@@ -61,7 +60,7 @@
     <figure class="window" data-state="idle">
       <div class="chrome">
         <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span class="chrome-title"><b class="pulse" aria-hidden="true"></b><span data-live-label>Live demo, playing by itself</span></span>
+        <span class="chrome-title"><b class="pulse" aria-hidden="true"></b><span data-live-label aria-live="polite">Live demo</span></span>
         <span class="chrome-actions">
           <button type="button" class="chip" data-demo-theme aria-label="Show the demo in dark"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2Z"/></svg><span>Dark</span></button>
           <button type="button" class="chip gold" data-take>Take over</button>
@@ -69,24 +68,29 @@
         </span>
       </div>
       <div class="frame">
-        <iframe title="Live demo: the three real plugins running in your browser" data-src="demo/index.html?demo" width="1400" height="820" tabindex="-1"></iframe>
-        <button type="button" class="shield" data-take aria-label="Take over the demo and use it yourself"><span>Click to take over</span></button>
-        <video class="frame-film" controls playsinline preload="none" poster="assets/film-poster.jpg">
+        <iframe title="Live demo: the three real plugins running in your browser" data-src="demo/index.html?demo" tabindex="-1"></iframe>
+        <button type="button" class="shield" data-take tabindex="-1" aria-hidden="true"><span>Click to take over</span></button>
+        <video class="frame-film" id="film" controls playsinline preload="none" poster="assets/film-poster.jpg" aria-label="The Hermes Folio film: one workbook through all three pages, 85 seconds">
           <source src="assets/hermes-folio.mp4" type="video/mp4">
+          Your browser cannot play this video. <a href="assets/hermes-folio.mp4">Download the film</a>.
         </video>
         <button type="button" class="frame-start" data-start hidden>Play the demo</button>
       </div>
       <figcaption>
-        <span class="wide-only">These are the three real plugins running in your browser. Hermes' replies are scripted for the demo, and nothing you do here is saved.</span>
+        <span class="wide-only">The three real plugins, running in your browser. Hermes' replies are scripted and nothing you do here is saved. <button type="button" class="textlink" data-film hidden>Watch the 85 second film instead</button></span>
         <span class="narrow-only">The film, 85 seconds. On a wider screen this is a live demo you can use.</span>
       </figcaption>
     </figure>
+    <div class="grab">
+      <p><b>One command installs all three.</b> Needs Hermes 0.22.6 or later.</p>
+      <div class="cmd"><code>hermes plugins pack install <wbr>https://raw.githubusercontent.com/<wbr>Adolanium/hermes-folio/main/<wbr>hermes-pack.yaml</code><button type="button" data-copy="hermes plugins pack install https://raw.githubusercontent.com/Adolanium/hermes-folio/main/hermes-pack.yaml">Copy</button></div>
+    </div>
   </section>
 
   <section class="plugin" id="sheets" aria-labelledby="sheets-h">
-    <div class="copy reveal">
-      <p class="eyebrow"><span class="num">01</span> Sheets</p>
-      <h2 id="sheets-h">A spreadsheet with an agent in every column</h2>
+    <div class="copy">
+      <h2 id="sheets-h">Sheets</h2>
+      <p class="claim">A spreadsheet with an agent in every column.</p>
       <p>Open an Excel workbook or a CSV, or ask for a sheet and a Hermes agent finds the rows on the web. Hermes reads it and suggests columns worth adding. You tick the ones you want, and it answers every row.</p>
       <ul class="points">
         <li><b>Prompt columns.</b> Write a question once and get a typed, sortable answer for each row.</li>
@@ -94,16 +98,16 @@
         <li><b>Highlight rules.</b> Hermes proposes them from a summary of your columns. You accept the ones you want.</li>
         <li><b>Formulas, totals, Excel in and out.</b> The export keeps the formats and the fills.</li>
       </ul>
-      <div class="cmd"><code>hermes plugins install Adolanium/hermes-sheets</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-sheets">Copy</button></div>
+      <div class="cmd"><code>hermes plugins install <wbr>Adolanium/hermes-sheets</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-sheets">Copy</button></div>
       <a class="more" href="https://github.com/Adolanium/hermes-sheets">Sheets on GitHub <span aria-hidden="true">→</span></a>
     </div>
-    <figure class="shot reveal"><video muted loop playsinline preload="none" poster="assets/sheets.jpg" data-clip="sheets" aria-label="Sheets in use: columns get pound and percent formats, a column goes bold, and Hermes suggests two highlight rules that paint the rows"><source src="assets/sheets.mp4" type="video/mp4"></video></figure>
+    <figure class="shot reveal"><video muted loop playsinline preload="none" data-clip="sheets" aria-label="Sheets in use: columns get pound and percent formats, a column goes bold, and Hermes suggests two highlight rules that paint the rows"><source src="assets/sheets.mp4" type="video/mp4"></video><button type="button" class="clip-toggle" data-clip-toggle hidden>Pause</button></figure>
   </section>
 
   <section class="plugin flip" id="data" aria-labelledby="data-h">
-    <div class="copy reveal">
-      <p class="eyebrow"><span class="num">02</span> Data</p>
-      <h2 id="data-h">A report where every number is computed, not written</h2>
+    <div class="copy">
+      <h2 id="data-h">Data</h2>
+      <p class="claim">A report where every number is computed, not written.</p>
       <p>Hermes reads the table and suggests a headline and a handful of charts, each making one point with an arrow to the mark it is about. You accept the ones you want onto the page.</p>
       <ul class="points">
         <li><b>The model never types a figure.</b> It picks columns and wording. The page works out every number from your rows.</li>
@@ -111,16 +115,16 @@
         <li><b>Point at any mark.</b> The remark follows it. Split a chart by a second column, or redraw it as another type.</li>
         <li><b>Export.</b> A web page, Markdown, a chart as SVG, or the table as CSV.</li>
       </ul>
-      <div class="cmd"><code>hermes plugins install Adolanium/hermes-data</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-data">Copy</button></div>
+      <div class="cmd"><code>hermes plugins install <wbr>Adolanium/hermes-data</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-data">Copy</button></div>
       <a class="more" href="https://github.com/Adolanium/hermes-data">Data on GitHub <span aria-hidden="true">→</span></a>
     </div>
-    <figure class="shot reveal"><video muted loop playsinline preload="none" poster="assets/data.jpg" data-clip="data" aria-label="Data in use: Hermes reads the columns, suggests a headline and four charts, and they are accepted onto the page"><source src="assets/data.mp4" type="video/mp4"></video></figure>
+    <figure class="shot reveal"><video muted loop playsinline preload="none" data-clip="data" aria-label="Data in use: Hermes reads the columns, suggests a headline and four charts, and they are accepted onto the page"><source src="assets/data.mp4" type="video/mp4"></video><button type="button" class="clip-toggle" data-clip-toggle hidden>Pause</button></figure>
   </section>
 
   <section class="plugin" id="whiteboard" aria-labelledby="whiteboard-h">
-    <div class="copy reveal">
-      <p class="eyebrow"><span class="num">03</span> Whiteboard</p>
-      <h2 id="whiteboard-h">A board where the notes get done</h2>
+    <div class="copy">
+      <h2 id="whiteboard-h">Whiteboard</h2>
+      <p class="claim">A board where the notes get done.</p>
       <p>Say what you are planning and Hermes lays it out as a route, columns or a map. Add rough notes and it proposes groups and action items. Hand an action to Hermes and an agent does it on the board.</p>
       <ul class="points">
         <li><b>Results land next to the note.</b> With the sources the agent read, and a button to unpack them into more notes.</li>
@@ -128,24 +132,22 @@
         <li><b>Accept one by one.</b> Every suggestion can be taken back.</li>
         <li><b>Select anything and ask.</b> The answer comes back as a card on the board.</li>
       </ul>
-      <div class="cmd"><code>hermes plugins install Adolanium/hermes-whiteboard</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-whiteboard">Copy</button></div>
+      <div class="cmd"><code>hermes plugins install <wbr>Adolanium/hermes-whiteboard</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-whiteboard">Copy</button></div>
       <a class="more" href="https://github.com/Adolanium/hermes-whiteboard">Whiteboard on GitHub <span aria-hidden="true">→</span></a>
     </div>
-    <figure class="shot reveal"><video muted loop playsinline preload="none" poster="assets/whiteboard.jpg" data-clip="whiteboard" aria-label="Whiteboard in use: findings from a report land as notes, one is handed to Hermes, and a result card with sources is delivered beside it"><source src="assets/whiteboard.mp4" type="video/mp4"></video></figure>
+    <figure class="shot reveal"><video muted loop playsinline preload="none" data-clip="whiteboard" aria-label="Whiteboard in use: findings from a report land as notes, one is handed to Hermes, and a result card with sources is delivered beside it"><source src="assets/whiteboard.mp4" type="video/mp4"></video><button type="button" class="clip-toggle" data-clip-toggle hidden>Pause</button></figure>
   </section>
 
   <section class="together" id="together" aria-labelledby="together-h">
+    <h2 id="together-h">Each one works alone. Installed together, they pass the work on.</h2>
     <div class="story" data-story>
       <div class="story-pin">
-        <div class="together-head">
-          <p class="eyebrow">Together</p>
-          <h2 id="together-h">Each one works alone. Installed together, they pass the work on.</h2>
-        </div>
-        <ol class="story-steps" aria-hidden="true">
+        <ol class="story-steps">
           <li data-step="0"><b>Your rows</b> live in Sheets.</li>
           <li data-step="1"><b>Chart</b> opens them as a report in Data.</li>
           <li data-step="2"><b>Pin to board</b> puts the finding on your Whiteboard.</li>
         </ol>
+        <div class="story-scroll" tabindex="0" role="group" aria-label="Diagram of the handoffs">
         <svg class="story-svg" viewBox="0 0 1200 430" role="img" aria-label="A row in a sheet becomes a bar in a chart, and the chart's finding becomes a note on a board">
           <g class="s-card" transform="translate(30 60)">
             <rect width="330" height="320" rx="18" class="s-paper"/>
@@ -180,26 +182,29 @@
           </g>
           <g class="s-hand s-hand-1">
             <path d="M366 188C386 160 410 160 430 184" class="s-arc"/><path d="M420 172l11 12-15 3" class="s-arc"/>
+            <path class="s-down" d="M195 334v58M187 384l8 10 8-10"/>
             <g transform="translate(398 138)"><rect x="-37" y="-17" width="74" height="34" rx="17" class="s-chip"/><text y="5" class="s-chip-t">Chart</text></g>
           </g>
           <g class="s-hand s-hand-2">
             <path d="M771 188C791 160 815 160 835 184" class="s-arc"/><path d="M825 172l11 12-15 3" class="s-arc"/>
+            <path class="s-down" d="M195 724v58M187 774l8 10 8-10"/>
             <g transform="translate(803 138)"><rect x="-58" y="-17" width="116" height="34" rx="17" class="s-chip"/><text y="5" class="s-chip-t">Pin to board</text></g>
           </g>
           <circle r="11" class="s-token" data-token/>
         </svg>
+        </div>
       </div>
     </div>
     <div class="facts">
-      <article class="reveal">
+      <article>
         <h3>Only on a click</h3>
         <p>A handoff starts from a button on the page you are on. Nothing moves between the plugins on its own, and no model is involved in the handoff.</p>
       </article>
-      <article class="reveal">
+      <article>
         <h3>Always something new</h3>
         <p>A table that arrives becomes a new grid or a new report. Notes land as one new group beside your board, and one undo takes them off again.</p>
       </article>
-      <article class="reveal">
+      <article>
         <h3>Nothing leaves the window</h3>
         <p>The three pages run in one app window and pass the table with a browser event. No file is written and no backend is called for it. Other plugins you have switched on share that window and could read such an event.</p>
       </article>
@@ -210,40 +215,32 @@
   <section class="rules" aria-labelledby="rules-h">
     <h2 id="rules-h">The same three rules on every page</h2>
     <ol>
-      <li class="reveal"><b>Hermes suggests. You decide.</b><span>Columns, rules, charts, groups and action items all wait as suggestions until you accept them.</span></li>
-      <li class="reveal"><b>You can take it back.</b><span>Accepted changes can be undone, and an agent's change to a cell is marked until you touch it.</span></li>
-      <li class="reveal"><b>Chat access starts off.</b><span>A Hermes chat can read your grids, reports and boards and propose changes only after you turn that on.</span></li>
+      <li><b>Hermes suggests. You decide.</b><span>Columns, rules, charts, groups and action items all wait as suggestions until you accept them.</span></li>
+      <li><b>You can take it back.</b><span>Accepted changes can be undone, and an agent's change to a cell is marked until you touch it.</span></li>
+      <li><b>Chat access starts off.</b><span>A Hermes chat can read your grids, reports and boards and propose changes only after you turn that on.</span></li>
     </ol>
   </section>
 
-  <section class="film" id="film" aria-labelledby="film-h">
-    <p class="eyebrow">The film</p>
-    <h2 id="film-h">One workbook, three pages, 85 seconds</h2>
-    <figure class="window reveal">
-      <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span></div>
-      <video controls playsinline preload="none" poster="assets/film-poster.jpg">
-        <source src="assets/hermes-folio.mp4" type="video/mp4">
-        Your browser cannot play this video. <a href="assets/hermes-folio.mp4">Download the film</a>.
-      </video>
-    </figure>
-  </section>
-
   <section class="install" id="install" aria-labelledby="install-h">
-    <p class="eyebrow">Install</p>
-    <h2 id="install-h">One command for all three</h2>
-    <p class="lede">Hermes shows you the three plugins and their pinned versions, asks once, then installs them. Each plugin still asks for its own consent.</p>
-    <div class="cmds">
-      <div class="cmd big"><code>hermes plugins pack install https://raw.githubusercontent.com/Adolanium/hermes-folio/main/hermes-pack.yaml</code><button type="button" data-copy="hermes plugins pack install https://raw.githubusercontent.com/Adolanium/hermes-folio/main/hermes-pack.yaml">Copy</button></div>
-    </div>
+    <h2 id="install-h">Install all three</h2>
+    <p class="lede">You need Hermes 0.22.6 or later and nothing else.</p>
+    <ol class="steps">
+      <li>
+        <b>Copy the command.</b>
+        <div class="cmd big"><code>hermes plugins pack install <wbr>https://raw.githubusercontent.com/<wbr>Adolanium/hermes-folio/main/<wbr>hermes-pack.yaml</code><button type="button" data-copy="hermes plugins pack install https://raw.githubusercontent.com/Adolanium/hermes-folio/main/hermes-pack.yaml">Copy</button></div>
+      </li>
+      <li><b>Run it in a terminal.</b> <span>Hermes lists the three plugins and their pinned versions and asks once. Each plugin still asks for its own consent.</span></li>
+      <li><b>Switch them on.</b> <span>In Hermes Desktop, open Capabilities, then Plugins. Sheets, Data and Whiteboard appear in the sidebar.</span></li>
+    </ol>
     <details class="singly">
       <summary>Or install them one at a time</summary>
       <div class="cmds">
-        <div class="cmd"><code>hermes plugins install Adolanium/hermes-sheets</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-sheets">Copy</button></div>
-        <div class="cmd"><code>hermes plugins install Adolanium/hermes-data</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-data">Copy</button></div>
-        <div class="cmd"><code>hermes plugins install Adolanium/hermes-whiteboard</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-whiteboard">Copy</button></div>
+        <div class="cmd"><code>hermes plugins install <wbr>Adolanium/hermes-sheets</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-sheets">Copy</button></div>
+        <div class="cmd"><code>hermes plugins install <wbr>Adolanium/hermes-data</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-data">Copy</button></div>
+        <div class="cmd"><code>hermes plugins install <wbr>Adolanium/hermes-whiteboard</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-whiteboard">Copy</button></div>
       </div>
     </details>
-    <p class="fine">Needs Hermes 0.22.6 or later and nothing else. Run it in a terminal, then switch the plugins on under Capabilities, Plugins. Your models and your usage costs apply to every model call, and each page shows the count before it runs.</p>
+    <p class="fine">Each plugin works on its own, so you can keep one and remove the others. Your own models and usage costs apply to every model call, and each page shows the count before it runs.</p>
   </section>
 </main>
 
@@ -259,6 +256,8 @@
     <a href="https://github.com/Adolanium/hermes-folio">this site</a>
   </nav>
 </footer>
+
+<p class="sr" role="status" data-status></p>
 
 <script src="site.js" defer></script>
 </body>
