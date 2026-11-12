@@ -79,3 +79,16 @@ html, html.light, :root { --ui-accent: hsl(232 26% 22%) !important; --theme-midg
 html, html.light, :root { --theme-primary: hsl(232 26% 20%) !important; --dt-primary: hsl(232 26% 20%) !important; --color-primary: hsl(232 26% 20%) !important; --color-primary-foreground: hsl(40 60% 97%) !important; --dt-primary-foreground: hsl(40 60% 97%) !important; }
 /* The caption sits where the board's toast would, so the film leaves the toast out. */
 .wb-toast { display: none !important; }
+
+/* ---- the dark theme: Hermes Desktop's own dark tokens, with the suite's paper as the accent */
+html.dark { --ui-accent: hsl(40 36% 88%) !important; --theme-midground: hsl(40 36% 88%) !important; --theme-primary: hsl(40 36% 90%) !important; --dt-primary: hsl(40 36% 90%) !important; --color-primary: hsl(40 36% 90%) !important; --color-primary-foreground: hsl(232 26% 14%) !important; --dt-primary-foreground: hsl(232 26% 14%) !important; }
+html.dark, html.dark body { background: hsl(228 14% 8%); }
+html.dark #stage { background: radial-gradient(1400px 900px at 50% 40%, hsl(228 14% 13%), hsl(228 16% 7%)); }
+html.dark #win { box-shadow: 0 0 0 1px hsl(40 30% 90% / .14), 0 40px 90px -30px hsl(0 0% 0% / .8); }
+html.dark .h-bar, html.dark .h-side { background: hsl(228 12% 9%); }
+html.dark .h-bar i { background: hsl(228 8% 26%); }
+html.dark .h-row.on { background: hsl(228 10% 18%); }
+html.dark #caption { background: hsl(40 44% 94%); color: hsl(232 26% 17%); }
+html.dark #cur svg path { fill: hsl(40 44% 94%); stroke: hsl(232 26% 14%); }
+/* Hermes sets these from its theme at runtime. The stand-in has no theme code, so the dark values of the default theme are written out here. */
+html.dark { color-scheme: dark; --theme-foreground: #e6edf3; --theme-secondary: #1d2e4f; --theme-accent-soft: #17243a; --theme-warm: #4a84fe; --theme-background-seed: #0d1117; --theme-sidebar-seed: #010409; --theme-card-seed: #010409; --theme-elevated-seed: #161b22; --theme-bubble-seed: #07162c; --theme-mix-chrome: 74%; --theme-mix-sidebar: 100%; --theme-mix-card: 38%; --theme-mix-elevated: 46%; --theme-mix-bubble: 46%; --dt-secondary-foreground: #e6edf3; --dt-accent-foreground: #e6edf3; --dt-border: #30363d; --dt-input: #0d1117; --dt-ring: hsl(40 36% 88%); --dt-muted: #1a1e24; --dt-destructive: #f85149; --dt-destructive-foreground: #ffffff; --dt-sidebar-border: #30363d; }

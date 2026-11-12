@@ -16,6 +16,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;0,900;1,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
+<script>
+// Set the theme before the first paint: the visitor's own choice if they made one, else the system's.
+(function () {
+  var theme = null
+  try { theme = localStorage.getItem('folio-theme') } catch (error) {}
+  if (theme !== 'light' && theme !== 'dark') { theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' }
+  document.documentElement.dataset.theme = theme
+})()
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -32,6 +41,7 @@
     <a href="#together">Together</a>
     <a href="#film">Film</a>
     <a href="#install" class="pill">Install</a>
+    <button type="button" class="theme" data-theme-switch aria-label="Switch between light and dark" hidden><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2Z"/></svg></button>
   </nav>
 </header>
 
@@ -53,6 +63,7 @@
         <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="chrome-title"><b class="pulse" aria-hidden="true"></b><span data-live-label>Live demo, playing by itself</span></span>
         <span class="chrome-actions">
+          <button type="button" class="chip" data-demo-theme aria-label="Show the demo in dark"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2Z"/></svg><span>Dark</span></button>
           <button type="button" class="chip gold" data-take>Take over</button>
           <button type="button" class="chip" data-replay hidden>Replay</button>
         </span>
@@ -86,7 +97,7 @@
       <div class="cmd"><code>hermes plugins install Adolanium/hermes-sheets</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-sheets">Copy</button></div>
       <a class="more" href="https://github.com/Adolanium/hermes-sheets">Sheets on GitHub <span aria-hidden="true">→</span></a>
     </div>
-    <figure class="shot reveal"><video muted loop playsinline preload="none" poster="assets/sheets.jpg" data-clip aria-label="Sheets in use: columns get pound and percent formats, a column goes bold, and Hermes suggests two highlight rules that paint the rows"><source src="assets/sheets.mp4" type="video/mp4"></video></figure>
+    <figure class="shot reveal"><video muted loop playsinline preload="none" poster="assets/sheets.jpg" data-clip="sheets" aria-label="Sheets in use: columns get pound and percent formats, a column goes bold, and Hermes suggests two highlight rules that paint the rows"><source src="assets/sheets.mp4" type="video/mp4"></video></figure>
   </section>
 
   <section class="plugin flip" id="data" aria-labelledby="data-h">
@@ -103,7 +114,7 @@
       <div class="cmd"><code>hermes plugins install Adolanium/hermes-data</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-data">Copy</button></div>
       <a class="more" href="https://github.com/Adolanium/hermes-data">Data on GitHub <span aria-hidden="true">→</span></a>
     </div>
-    <figure class="shot reveal"><video muted loop playsinline preload="none" poster="assets/data.jpg" data-clip aria-label="Data in use: Hermes reads the columns, suggests a headline and four charts, and they are accepted onto the page"><source src="assets/data.mp4" type="video/mp4"></video></figure>
+    <figure class="shot reveal"><video muted loop playsinline preload="none" poster="assets/data.jpg" data-clip="data" aria-label="Data in use: Hermes reads the columns, suggests a headline and four charts, and they are accepted onto the page"><source src="assets/data.mp4" type="video/mp4"></video></figure>
   </section>
 
   <section class="plugin" id="whiteboard" aria-labelledby="whiteboard-h">
@@ -120,7 +131,7 @@
       <div class="cmd"><code>hermes plugins install Adolanium/hermes-whiteboard</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-whiteboard">Copy</button></div>
       <a class="more" href="https://github.com/Adolanium/hermes-whiteboard">Whiteboard on GitHub <span aria-hidden="true">→</span></a>
     </div>
-    <figure class="shot reveal"><video muted loop playsinline preload="none" poster="assets/whiteboard.jpg" data-clip aria-label="Whiteboard in use: findings from a report land as notes, one is handed to Hermes, and a result card with sources is delivered beside it"><source src="assets/whiteboard.mp4" type="video/mp4"></video></figure>
+    <figure class="shot reveal"><video muted loop playsinline preload="none" poster="assets/whiteboard.jpg" data-clip="whiteboard" aria-label="Whiteboard in use: findings from a report land as notes, one is handed to Hermes, and a result card with sources is delivered beside it"><source src="assets/whiteboard.mp4" type="video/mp4"></video></figure>
   </section>
 
   <section class="together" id="together" aria-labelledby="together-h">

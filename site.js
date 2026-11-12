@@ -3,6 +3,47 @@ document.documentElement.classList.add('js')
 
 const still = matchMedia('(prefers-reduced-motion: reduce)').matches
 const wide = matchMedia('(min-width: 901px)')
+const root = document.documentElement
+const themed = []
+
+// ---------------------------------------------------------------- light and dark
+/** The page's theme. A click on the switch keeps the choice; until then it follows the system. */
+const pageTheme = () => (root.dataset.theme === 'dark' ? 'dark' : 'light')
+
+;(() => {
+  const button = document.querySelector('[data-theme-switch]')
+  const system = matchMedia('(prefers-color-scheme: dark)')
+  let chosen = false
+
+  try {
+    chosen = ['light', 'dark'].includes(localStorage.getItem('folio-theme'))
+  } catch {
+    // No storage: the choice lasts for this visit.
+  }
+
+  const set = theme => {
+    root.dataset.theme = theme
+    button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light' : 'Switch to dark')
+    themed.forEach(listener => listener(theme))
+  }
+
+  button.hidden = false
+  button.addEventListener('click', () => {
+    const theme = pageTheme() === 'dark' ? 'light' : 'dark'
+
+    chosen = true
+
+    try {
+      localStorage.setItem('folio-theme', theme)
+    } catch {
+      // Still applies to this visit.
+    }
+
+    set(theme)
+  })
+  system.addEventListener('change', () => !chosen && set(system.matches ? 'dark' : 'light'))
+  set(pageTheme())
+})()
 
 // ---------------------------------------------------------------- live demo
 ;(() => {
@@ -13,7 +54,18 @@ const wide = matchMedia('(min-width: 901px)')
   const take = box.querySelector('.chrome-actions [data-take]')
   const replay = box.querySelector('[data-replay]')
   const start = box.querySelector('[data-start]')
+  const shade = box.querySelector('[data-demo-theme]')
   let wanted = !still
+  let theme = pageTheme()
+
+  // The demo starts in the page's theme and follows it, and its own switch flips it alone.
+  const tint = next => {
+    theme = next
+    shade.dataset.now = theme
+    shade.lastElementChild.textContent = theme === 'dark' ? 'Light' : 'Dark'
+    shade.setAttribute('aria-label', theme === 'dark' ? 'Show the demo in light' : 'Show the demo in dark')
+    demo.contentWindow?.postMessage({ folio: 'theme', value: theme }, '*')
+  }
 
   const set = state => {
     box.dataset.state = state
@@ -43,6 +95,10 @@ const wide = matchMedia('(min-width: 901px)')
       return
     }
 
+    if (event.data?.folio === 'ready') {
+      tint(theme)
+    }
+
     if (event.data?.folio === 'ready' && box.dataset.state !== 'manual') {
       if (wanted) {
         say('play')
@@ -58,7 +114,9 @@ const wide = matchMedia('(min-width: 901px)')
   })
 
   box.addEventListener('click', event => {
-    if (event.target.closest('[data-take]') && box.dataset.state === 'auto') {
+    if (event.target.closest('[data-demo-theme]')) {
+      tint(theme === 'dark' ? 'light' : 'dark')
+    } else if (event.target.closest('[data-take]') && box.dataset.state === 'auto') {
       say('take-over')
       set('manual')
       demo.tabIndex = 0
@@ -76,6 +134,8 @@ const wide = matchMedia('(min-width: 901px)')
   })
 
   wide.addEventListener('change', load)
+  themed.push(tint)
+  tint(theme)
   set(wide.matches ? 'idle' : 'failed')
 
   if (document.readyState === 'complete') {
@@ -138,6 +198,32 @@ const wide = matchMedia('(min-width: 901px)')
 // ---------------------------------------------------------------- clips play while they are on screen
 ;(() => {
   const clips = [...document.querySelectorAll('video[data-clip]')]
+
+  // Each clip was recorded in both themes. Show the one that matches the page.
+  const dress = theme => {
+    for (const clip of clips) {
+      const file = `assets/${clip.dataset.clip}${theme === 'dark' ? '-dark' : ''}`
+
+      if (clip.dataset.file === file) {
+        continue
+      }
+
+      const playing = !clip.paused
+
+      clip.dataset.file = file
+      clip.poster = `${file}.jpg`
+      clip.querySelector('source')?.remove()
+      clip.src = `${file}.mp4`
+      clip.load()
+
+      if (playing) {
+        clip.play().catch(() => {})
+      }
+    }
+  }
+
+  themed.push(dress)
+  dress(pageTheme())
 
   if (still) {
     clips.forEach(clip => (clip.controls = true))

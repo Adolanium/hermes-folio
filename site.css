@@ -20,8 +20,9 @@
   color-scheme: light;
 }
 
+/* Without scripts nothing sets data-theme, so follow the system. */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme]) {
     --paper: hsl(228 14% 11%);
     --card: hsl(228 14% 15%);
     --ink: hsl(40 36% 92%);
@@ -89,6 +90,16 @@ ul, ol { list-style: none; }
 .top nav a:hover { color: var(--ink); }
 .top nav .pill { padding: 7px 16px; border-radius: 99px; background: var(--ink); color: var(--paper); }
 .top nav .pill:hover { color: var(--paper); opacity: .88; }
+.theme { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border-radius: 99px; border: 1.6px solid var(--rule); background: none; color: var(--ink); cursor: pointer; transition: border-color .15s, transform .16s cubic-bezier(.2, 1.4, .4, 1); }
+.theme:hover { border-color: var(--ink); transform: translateY(-1px); }
+.theme[hidden] { display: none; }
+.theme svg, .chip svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+/* The icon shows the theme a click switches to. */
+.i-sun { display: none; }
+:root[data-theme="dark"] .theme .i-sun, [data-demo-theme][data-now="dark"] .i-sun { display: block; }
+:root[data-theme="dark"] .theme .i-moon, [data-demo-theme][data-now="dark"] .i-moon { display: none; }
+.chip[data-demo-theme] { display: inline-flex; align-items: center; gap: 7px; padding: 0 13px 0 10px; }
+.chip[data-demo-theme] svg { width: 15px; height: 15px; }
 @media (max-width: 720px) { .top nav a:not(.pill) { display: none; } }
 
 /* ---------------------------------------------------------------- hero */

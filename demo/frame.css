@@ -16,3 +16,9 @@ html.manual, html.manual body { cursor: auto; }
 html.manual #cur, html.manual #caption, html.manual #file, html.manual .ring { display: none !important; }
 html.manual .h-row[data-nav] { cursor: pointer; }
 html.manual .h-row[data-nav]:hover { background: hsl(40 10% 92%); }
+
+/* Dark: the site's switch sends the theme in, and the page takes Hermes' dark colours. */
+html.demo.dark, html.demo.dark body { background: hsl(228 13% 12%); }
+html.demo.dark #stage { background: none; }
+html.demo.dark #win { box-shadow: none; }
+html.manual.dark .h-row[data-nav]:hover { background: hsl(228 10% 16%); }
