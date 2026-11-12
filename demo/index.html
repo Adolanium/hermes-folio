@@ -1,0 +1,27 @@
+<!doctype html>
+<html class="light demo" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Hermes Folio live demo</title>
+<!-- The three real plugins, running against a stand-in for Hermes Desktop.
+     Hermes' replies are scripted. Interface styles and components come from
+     Hermes Agent (MIT, see NOTICE.md in this folder). -->
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="demo.css">
+<link rel="stylesheet" href="stage.css">
+<link rel="stylesheet" href="frame.css">
+</head>
+<body>
+<div id="stage">
+  <div id="cam"></div>
+  <div id="cur"><svg viewBox="0 0 40 40"><path d="M6 5 L29 15.5 L18.6 19.2 L14.4 30 Z" fill="hsl(232 26% 17%)" stroke="hsl(40 60% 98%)" stroke-width="2.6" stroke-linejoin="round"/><circle cx="6" cy="5" r="3.2" fill="hsl(41 92% 56%)" stroke="hsl(40 60% 98%)" stroke-width="1.6"/></svg></div>
+  <div id="caption"><i></i><span></span></div>
+  <div id="file"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6Z M14 3v4h4 M9 12h6 M9 15h6 M9 18h4" fill="hsl(42 60% 98%)" stroke="hsl(232 26% 17%)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg><span>cart-menu.xlsx</span></div>
+  <div id="title" hidden></div>
+  <div id="end" hidden></div>
+</div>
+<script type="module" src="demo.js"></script>
+</body>
+</html>

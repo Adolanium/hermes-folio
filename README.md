@@ -5,7 +5,7 @@
 **Three plugins for Hermes Desktop that hand work to each other.**<br />
 A sheet, a report and a board. Hermes suggests at every step, and nothing lands until you accept it.
 
-[**Visit the site**](https://adolanium.github.io/hermes-folio/) &nbsp;·&nbsp; [Watch the film](https://adolanium.github.io/hermes-folio/#film) &nbsp;·&nbsp; [Sheets](https://github.com/Adolanium/hermes-sheets) &nbsp;·&nbsp; [Data](https://github.com/Adolanium/hermes-data) &nbsp;·&nbsp; [Whiteboard](https://github.com/Adolanium/hermes-whiteboard)
+[**Try the live demo**](https://adolanium.github.io/hermes-folio/#live) &nbsp;·&nbsp; [Watch the film](https://adolanium.github.io/hermes-folio/#film) &nbsp;·&nbsp; [Sheets](https://github.com/Adolanium/hermes-sheets) &nbsp;·&nbsp; [Data](https://github.com/Adolanium/hermes-data) &nbsp;·&nbsp; [Whiteboard](https://github.com/Adolanium/hermes-whiteboard)
 
 </div>
 
@@ -21,7 +21,15 @@ A sheet, a report and a board. Hermes suggests at every step, and nothing lands 
 
 ## Install
 
-Each plugin needs Hermes 0.22.6 or later and nothing else. Install one, two or all three, in any order.
+Each plugin needs Hermes 0.22.6 or later and nothing else.
+
+All three with one command. Hermes shows the three plugins and their pinned versions, asks once, then installs them, and each plugin still asks for its own consent:
+
+```bash
+hermes plugins pack install https://raw.githubusercontent.com/Adolanium/hermes-folio/main/hermes-pack.yaml
+```
+
+Or one at a time, in any order:
 
 ```bash
 hermes plugins install Adolanium/hermes-sheets
@@ -116,7 +124,11 @@ The [film on the site](https://adolanium.github.io/hermes-folio/#film) follows o
 
 ## This repository
 
-This repository holds the site only: one static page (`index.html`, `site.css`) and its assets. The plugins live in their own repositories, linked above.
+This repository holds the site and the pack file. The plugins live in their own repositories, linked above.
+
+- `index.html`, `site.css`, `site.js` and `assets/` are the page.
+- `hermes-pack.yaml` is the plugin pack that the one-command install reads. It pins each plugin to an exact commit.
+- `demo/` is the live demo on the site: the three plugins running in a browser against a stand-in for Hermes Desktop, with scripted replies. It includes interface code from Hermes Agent under its MIT licence; see [`demo/NOTICE.md`](demo/NOTICE.md).
 
 To look at the site locally, serve the folder with any static server:
 
