@@ -108,6 +108,8 @@ main > section { padding: 0 var(--gutter); }
 .btn.line:hover { box-shadow: 0 6px 0 var(--ink); }
 .btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--ink); }
 
+/* The tilted tiles may lean a few pixels past a very narrow screen. */
+.hero { overflow-x: clip; }
 .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 2.4vw, 28px); max-width: 780px; margin: clamp(40px, 6vw, 68px) auto 0; }
 .trio a { display: grid; justify-items: center; gap: 4px; padding: 6px; text-decoration: none; border-radius: 18px; }
 .trio svg { width: min(100%, 148px); filter: drop-shadow(0 16px 16px hsl(232 40% 12% / .2)); transition: transform .35s cubic-bezier(.2, 1.5, .4, 1); }
