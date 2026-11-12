@@ -7,6 +7,9 @@ A sheet, a report and a board. Hermes suggests at every step, and nothing lands 
 
 [**Try the live demo**](https://adolanium.github.io/hermes-folio/#live) &nbsp;·&nbsp; [Watch the film](https://adolanium.github.io/hermes-folio/#film) &nbsp;·&nbsp; [Sheets](https://github.com/Adolanium/hermes-sheets) &nbsp;·&nbsp; [Data](https://github.com/Adolanium/hermes-data) &nbsp;·&nbsp; [Whiteboard](https://github.com/Adolanium/hermes-whiteboard)
 
+<br /><br />
+<img src="assets/nous-girl-folio.svg" width="88" height="88" alt="The Nous Girl, the Hermes Agent mark, in the Hermes Folio colours" />
+
 </div>
 
 <br />

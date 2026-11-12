@@ -111,6 +111,9 @@ button { font-family: inherit; }
 /* ---------------------------------------------------------------- hero */
 main > section { padding: 0 var(--gutter); }
 .hero { max-width: var(--wide); margin: 0 auto; padding-top: clamp(28px, 4.4vw, 56px); text-align: center; }
+.girl { border-radius: 50%; }
+.hero .girl { width: clamp(64px, 6.4vw, 88px); height: auto; margin: 0 auto clamp(10px, 1.4vw, 18px); }
+footer .girl { flex-shrink: 0; }
 .hero h1 { font: 900 clamp(42px, 6.6vw, 92px)/1.02 var(--display); letter-spacing: -.022em; text-wrap: balance; }
 /* A marker stroke behind the words, in dark ink on gold in both themes. */
 .hero h1 em { font-style: italic; font-weight: 700; color: var(--night); background: linear-gradient(transparent 10%, var(--gold) 10%, var(--gold) 92%, transparent 92%); padding: 0 .14em; border-radius: .08em; white-space: nowrap; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
