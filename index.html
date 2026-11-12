@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes Folio: Sheets, Data and Whiteboard for Hermes Desktop</title>
+<meta name="description" content="Three plugins for Hermes Desktop that hand work to each other. Format a sheet, chart it in one click, and pin the findings to a board. Hermes suggests, you decide.">
+<meta property="og:title" content="Hermes Folio">
+<meta property="og:description" content="Sheets, Data and Whiteboard for Hermes Desktop. Three pages, one folio.">
+<meta property="og:image" content="https://adolanium.github.io/hermes-folio/assets/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;0,900;1,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <a class="brand" href="#" aria-label="Hermes Folio, home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.4" class="m-disc"/><path d="M9 27c2-9 9-16 21-17-2 3-5 5-8 6 3 0 6 0 8-1-2 4-6 6-10 7 3 1 5 1 7 0-3 4-9 7-18 5Z" class="m-wing"/></svg>
+    <span>Hermes Folio</span>
+  </a>
+  <nav aria-label="Sections">
+    <a href="#sheets">Sheets</a>
+    <a href="#data">Data</a>
+    <a href="#whiteboard">Whiteboard</a>
+    <a href="#together">Together</a>
+    <a href="#install" class="pill">Install</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <p class="eyebrow">Three plugins for Hermes Desktop</p>
+    <h1>Three pages.<br><em>One folio.</em></h1>
+    <p class="lede">A sheet, a report and a board that hand work to each other. Format your rows, chart them in one click, and pin what you find to a board. Hermes suggests at every step, and nothing lands until you accept it.</p>
+    <div class="actions">
+      <a class="btn solid" href="#install">Install the three</a>
+      <a class="btn line" href="#film">Watch the film <span aria-hidden="true">↓</span></a>
+    </div>
+    <ul class="trio" aria-label="The three plugins">
+      <li><a href="#sheets"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="14" y="20" width="92" height="80" rx="10" class="t-paper"/><path d="M14 44h92M14 63h92M14 82h92M46 20v80M76 20v80" class="t-rule"/><rect x="46" y="63" width="30" height="19" class="t-gold"/></svg><b>Sheets</b><span>An agentic spreadsheet</span></a></li>
+      <li><a href="#data"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="14" y="20" width="92" height="80" rx="10" class="t-paper"/><rect x="28" y="64" width="13" height="24" rx="3" class="t-bar"/><rect x="47" y="52" width="13" height="36" rx="3" class="t-bar"/><rect x="66" y="34" width="13" height="54" rx="3" class="t-gold"/><rect x="85" y="58" width="13" height="30" rx="3" class="t-bar"/></svg><b>Data</b><span>An agentic report page</span></a></li>
+      <li><a href="#whiteboard"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="14" y="20" width="92" height="80" rx="10" class="t-paper"/><rect x="26" y="32" width="30" height="24" rx="3" class="t-mint" transform="rotate(-4 41 44)"/><rect x="64" y="34" width="30" height="24" rx="3" class="t-gold" transform="rotate(3 79 46)"/><rect x="44" y="66" width="30" height="24" rx="3" class="t-peach" transform="rotate(-2 59 78)"/></svg><b>Whiteboard</b><span>An agentic whiteboard</span></a></li>
+    </ul>
+  </section>
+
+  <section class="film" id="film" aria-labelledby="film-h">
+    <h2 id="film-h" class="sr">The film</h2>
+    <figure class="window">
+      <div class="chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+      <video controls playsinline preload="metadata" poster="assets/film-poster.jpg">
+        <source src="assets/hermes-folio.mp4" type="video/mp4">
+        Your browser cannot play this video. <a href="assets/hermes-folio.mp4">Download the film</a>.
+      </video>
+      <figcaption>One workbook goes through all three pages in 85 seconds. The plugins in the film are the real ones.</figcaption>
+    </figure>
+  </section>
+
+  <section class="plugin" id="sheets" aria-labelledby="sheets-h">
+    <div class="copy">
+      <p class="eyebrow"><span class="num">01</span> Sheets</p>
+      <h2 id="sheets-h">A spreadsheet with an agent in every column</h2>
+      <p>Open an Excel workbook or a CSV, or ask for a sheet and a Hermes agent finds the rows on the web. Hermes reads it and suggests columns worth adding. You tick the ones you want, and it answers every row.</p>
+      <ul class="points">
+        <li><b>Prompt columns.</b> Write a question once and get a typed, sortable answer for each row.</li>
+        <li><b>Real formatting.</b> Bold, colours, alignment, and currency or percent formats that never change the stored value.</li>
+        <li><b>Highlight rules.</b> Hermes proposes them from a summary of your columns. You accept the ones you want.</li>
+        <li><b>Formulas, totals, Excel in and out.</b> The export keeps the formats and the fills.</li>
+      </ul>
+      <div class="cmd"><code>hermes plugins install Adolanium/hermes-sheets</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-sheets">Copy</button></div>
+      <a class="more" href="https://github.com/Adolanium/hermes-sheets">Sheets on GitHub <span aria-hidden="true">→</span></a>
+    </div>
+    <figure class="shot"><img src="assets/sheets.jpg" width="2400" height="1322" loading="lazy" alt="The Sheets page: a coffee cart menu with pound and percent formats, three columns filled by Hermes, and two rows highlighted red by a rule"></figure>
+  </section>
+
+  <div class="hand" aria-hidden="true"><span>Chart</span><svg viewBox="0 0 120 40"><path d="M4 20C34 2 76 2 110 18" /><path d="M100 10l11 8-12 6" /></svg></div>
+
+  <section class="plugin flip" id="data" aria-labelledby="data-h">
+    <div class="copy">
+      <p class="eyebrow"><span class="num">02</span> Data</p>
+      <h2 id="data-h">A report where every number is computed, not written</h2>
+      <p>Hermes reads the table and suggests a headline and a handful of charts, each making one point with an arrow to the mark it is about. You accept the ones you want onto the page.</p>
+      <ul class="points">
+        <li><b>The model never types a figure.</b> It picks columns and wording. The page works out every number from your rows.</li>
+        <li><b>Ask about the table, or about one chart.</b> When the table cannot answer, an agent searches the web and shows its sources.</li>
+        <li><b>Point at any mark.</b> The remark follows it, split a chart by a second column, or redraw it as another type.</li>
+        <li><b>Export.</b> A web page, Markdown, a chart as SVG, or the table as CSV.</li>
+      </ul>
+      <div class="cmd"><code>hermes plugins install Adolanium/hermes-data</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-data">Copy</button></div>
+      <a class="more" href="https://github.com/Adolanium/hermes-data">Data on GitHub <span aria-hidden="true">→</span></a>
+    </div>
+    <figure class="shot"><img src="assets/data.jpg" width="2400" height="1322" loading="lazy" alt="The Data page: the headline Coffee carries the cart, pastry drags it, above charts of revenue by product and by category"></figure>
+  </section>
+
+  <div class="hand right" aria-hidden="true"><span>Pin to board</span><svg viewBox="0 0 120 40"><path d="M4 20C34 2 76 2 110 18" /><path d="M100 10l11 8-12 6" /></svg></div>
+
+  <section class="plugin" id="whiteboard" aria-labelledby="whiteboard-h">
+    <div class="copy">
+      <p class="eyebrow"><span class="num">03</span> Whiteboard</p>
+      <h2 id="whiteboard-h">A board where the notes get done</h2>
+      <p>Say what you are planning and Hermes lays it out as a route, columns or a map. Add rough notes and it proposes groups and action items. Hand an action to Hermes and an agent does it on the board.</p>
+      <ul class="points">
+        <li><b>Results land next to the note.</b> With the sources the agent read, and a button to unpack them into more notes.</li>
+        <li><b>Run the whole route.</b> Agents work each stop in order and leave a brief at the end.</li>
+        <li><b>Accept one by one.</b> Every suggestion can be taken back.</li>
+        <li><b>Select anything and ask.</b> The answer comes back as a card on the board.</li>
+      </ul>
+      <div class="cmd"><code>hermes plugins install Adolanium/hermes-whiteboard</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-whiteboard">Copy</button></div>
+      <a class="more" href="https://github.com/Adolanium/hermes-whiteboard">Whiteboard on GitHub <span aria-hidden="true">→</span></a>
+    </div>
+    <figure class="shot"><img src="assets/whiteboard.jpg" width="2400" height="1322" loading="lazy" alt="The Whiteboard page: four notes pinned from a report, and a result card an agent delivered next to one of them, with a small price table and its sources"></figure>
+  </section>
+
+  <section class="together" id="together" aria-labelledby="together-h">
+    <p class="eyebrow">Together</p>
+    <h2 id="together-h">Each one works alone. Installed together, they pass the work on.</h2>
+    <div class="flow" role="img" aria-label="Sheets sends tables to Data with Chart and rows to Whiteboard with Pin to board. Data sends tables back to Sheets with Open in Sheets and chart findings to Whiteboard with Pin to board.">
+      <svg viewBox="0 0 960 250" aria-hidden="true">
+        <g class="f-node" transform="translate(40 96)"><rect width="220" height="116" rx="16"/><text x="110" y="54">Sheets</text><text x="110" y="84" class="f-sub">your rows</text></g>
+        <g class="f-node" transform="translate(370 96)"><rect width="220" height="116" rx="16"/><text x="110" y="54">Data</text><text x="110" y="84" class="f-sub">the story</text></g>
+        <g class="f-node gold" transform="translate(700 96)"><rect width="220" height="116" rx="16"/><text x="110" y="54">Whiteboard</text><text x="110" y="84" class="f-sub">the plan</text></g>
+        <path class="f-line" d="M266 134h92"/><path class="f-tip" d="M350 126l12 8-12 8"/>
+        <text x="315" y="120" class="f-label">Chart</text>
+        <path class="f-line" d="M364 176h-92"/><path class="f-tip" d="M280 168l-12 8 12 8"/>
+        <text x="315" y="202" class="f-label">Open in Sheets</text>
+        <path class="f-line" d="M596 154h92"/><path class="f-tip" d="M680 146l12 8-12 8"/>
+        <text x="645" y="140" class="f-label">Pin to board</text>
+        <path class="f-line" d="M150 90C150 14 810 14 810 80"/><path class="f-tip" d="M801 72l9 12 9-12"/>
+        <text x="480" y="24" class="f-label">Pin to board</text>
+      </svg>
+    </div>
+    <div class="facts">
+      <article>
+        <h3>Only on a click</h3>
+        <p>A handoff starts from a button on the page you are on. Nothing moves between the plugins on its own, and no model is involved in the handoff.</p>
+      </article>
+      <article>
+        <h3>Always something new</h3>
+        <p>A table that arrives becomes a new grid or a new report. Notes land as one new group beside your board, and one undo takes them off again.</p>
+      </article>
+      <article>
+        <h3>Nothing leaves the window</h3>
+        <p>The three pages run in one app window and pass the table with a browser event. No file is written and no backend is called for it. Other plugins you have switched on share that window and could read such an event.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="rules" aria-labelledby="rules-h">
+    <h2 id="rules-h">The same three rules on every page</h2>
+    <ol>
+      <li><b>Hermes suggests. You decide.</b><span>Columns, rules, charts, groups and action items all wait as suggestions until you accept them.</span></li>
+      <li><b>You can take it back.</b><span>Accepted changes can be undone, and an agent's change to a cell is marked until you touch it.</span></li>
+      <li><b>Chat access starts off.</b><span>A Hermes chat can read your grids, reports and boards and propose changes only after you turn that on.</span></li>
+    </ol>
+  </section>
+
+  <section class="install" id="install" aria-labelledby="install-h">
+    <p class="eyebrow">Install</p>
+    <h2 id="install-h">Three commands, any order</h2>
+    <p class="lede">Each plugin needs Hermes 0.22.6 or later and nothing else: no packages, no build step. Switch them on under Capabilities, then Plugins.</p>
+    <div class="cmds">
+      <div class="cmd big"><code>hermes plugins install Adolanium/hermes-sheets</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-sheets">Copy</button></div>
+      <div class="cmd big"><code>hermes plugins install Adolanium/hermes-data</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-data">Copy</button></div>
+      <div class="cmd big"><code>hermes plugins install Adolanium/hermes-whiteboard</code><button type="button" data-copy="hermes plugins install Adolanium/hermes-whiteboard">Copy</button></div>
+    </div>
+    <p class="fine">Your models and your usage costs apply to every model call, and each page shows the count before it runs.</p>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <b>Hermes Folio</b>
+    <p>MIT licensed. An independent community project, not affiliated with Nous Research.</p>
+  </div>
+  <nav aria-label="Repositories">
+    <a href="https://github.com/Adolanium/hermes-sheets">hermes-sheets</a>
+    <a href="https://github.com/Adolanium/hermes-data">hermes-data</a>
+    <a href="https://github.com/Adolanium/hermes-whiteboard">hermes-whiteboard</a>
+    <a href="https://github.com/Adolanium/hermes-folio">this site</a>
+  </nav>
+</footer>
+
+<script>
+document.addEventListener('click', async event => {
+  const button = event.target.closest('[data-copy]')
+
+  if (!button) {
+    return
+  }
+
+  try {
+    await navigator.clipboard.writeText(button.dataset.copy)
+    button.textContent = 'Copied'
+  } catch {
+    button.textContent = 'Select it'
+    getSelection().selectAllChildren(button.previousElementSibling)
+  }
+
+  setTimeout(() => (button.textContent = 'Copy'), 1600)
+})
+</script>
+</body>
+</html>
